@@ -1,13 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const {getLivros} = require('../controladores/livros')
+const {getLivros, getLivro, postLivro} = require('../controladores/livros')
 
 router.get('/', getLivros) 
+router.get('/:id', getLivro) 
 
-
-router.post('/', (req, res) => {
-    res.send('Olá vc fez uma requisição post!!!')
-})
+router.post('/', postLivro)
 
 router.patch('/', (req, res) => {
     res.send('Olá vc fez uma requisição pacth!')
